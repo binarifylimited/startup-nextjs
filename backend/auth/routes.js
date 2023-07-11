@@ -28,6 +28,10 @@ router.post('/register', async (req, res) => {
   }
 });
 
+router.post('/', (req, res) => {
+  res.status(201).json({ status: 1, message: 'Welcome to Register Backend' });
+});
+
 
 
 module.exports = router;
