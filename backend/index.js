@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://startup_user:o23sEflabGZutnVS@insurancedb.u6oaxej.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://startup_user:o23sEflabGZutnVS@insurancedb.u6oaxej.mongodb.net/StartUp?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

@@ -27,16 +27,19 @@ const SignupPage = () => {
       const resData = await response.json()
 
       if (resData.status === 2) {
-        // console.log(resData.message);
+        console.log(resData);
         alert("Email already existed.")
         setIsLoading(false)
-      } else {
-
+      } else if (resData.status === 1) {
+        console.log(resData);
         alert("User Registered Successfully !")
         setIsLoading(false)
         window.location.reload()
-
+      } else {
+        alert("An error occurred while registering the user")
+        setIsLoading(false)
       }
+
     } catch (error) {
       console.error('An error occurred while registering the user:', error);
       alert("An error occurred while registering the user")
