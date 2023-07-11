@@ -17,7 +17,7 @@ const SignupPage = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:4000/auth/register', {
+      const response = await fetch('https://registration-backend-eta.vercel.app/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
