@@ -7,7 +7,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 type Inputs = {
   name: string,
   email: string,
-  password: string
+  phone: string,
+  category: string,
+  hearus: string
 };
 
 const SignupPage = () => {
@@ -149,16 +151,58 @@ const SignupPage = () => {
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
                       {" "}
-                      Your Password{" "}
+                      Phone Number{" "}
                     </label>
                     <input
-                      type="password"
-                      name="password"
-                      {...register("password", { required: true })}
-                      placeholder="Enter your Password"
+                      type="tel"
+                      name="phone"
+                      {...register("phone", { required: true })}
+                      placeholder="Enter your Phone number"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                     />
-                    {errors.password && <span>This field is required</span>}
+                    {errors.phone && <span>This field is required</span>}
+                  </div>
+                  <div className="mb-8">
+                    <label
+                      htmlFor="password"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Category{" "}
+                    </label>
+                    <select
+                      name="category"
+                      {...register("category", { required: true })}
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    >
+                      <option value="">Select---</option>
+                      <option value="School">School</option>
+                      <option value="Organisation">Organisation</option>
+                      <option value="Group">Group</option>
+                    </select>
+                    {errors.category && <span>This field is required</span>}
+                  </div>
+                  <div className="mb-8">
+                    <label
+                      htmlFor="password"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      How did you hear about us ?{" "}
+                    </label>
+                    <select
+                      name="hearus"
+                      {...register("hearus", { required: true })}
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    >
+                      <option value="">Select---</option>
+                      <option value="social-media">Social media</option>
+                      <option value="friend">Friend or family</option>
+                      <option value="search-engine">Search engine</option>
+                      <option value="advertisement">Advertisement</option>
+                      <option value="other">Other</option>
+                    </select>
+                    {errors.hearus && <span>This field is required</span>}
                   </div>
                   <div className="mb-8 flex">
                     <label

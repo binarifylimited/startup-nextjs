@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, phone, category, hearus } = req.body;
 
   try {
     // Check if email already exists
@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
     }
 
     // Email does not exist, proceed with user registration
-    const user = new User({ name, email, password });
+    const user = new User({ name, email, phone, category, hearus });
 
     // Save the user to the database
     await user.save();
