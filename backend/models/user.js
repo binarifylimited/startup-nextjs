@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 // Define user schema
 const userSchema = new mongoose.Schema({
   name: String,
-  email: String,
-  password: String,
+  program: String,
   phone: String,
-  category: String,
-  hearus: String
+  mode: String,
+  state: String,
+  gname: String,
+  gphone: String
 });
 
 const User = mongoose.model('User', userSchema);
