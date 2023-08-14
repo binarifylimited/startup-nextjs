@@ -26,5 +26,19 @@ router.post('/', (req, res) => {
 });
 
 
+router.get('/users', async (req, res) => {
+  try {
+    const users = await User.find({mode:"Online", mode:"Physical"});
+    res.json(users);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'An error occurred while fetching users' });
+  }
+});
+
+router.post('/', (req, res) => {
+  res.status(201).json({ status: 1, message: 'Welcome to Register Backend' });
+});
+
 
 module.exports = router;
