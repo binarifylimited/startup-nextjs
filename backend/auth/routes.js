@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 
 router.get('/users', async (req, res) => {
   try {
-    const users = await User.find({ "mode": { $regex: "mode", $options: "i" } })
+    const users = await User.find({ "mode": { $exists: true } })
     res.json(users);
   } catch (error) {
     console.log(error);
